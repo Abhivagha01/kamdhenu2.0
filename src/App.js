@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Header from "./Global/Header";
+import Footer from "./Global/Footer";
+import Home from "./Pages/Home";
+import Contact from "./Pages/Contact";
+import Event from "./Pages/Event";
+import Gallery from "./Pages/Gallery";
+import OneDayPicnic from "./Pages/OneDayPicnic";
+import VillOnRent from "./Pages/VillOnRent";
+import WeddingFunction from "./Pages/WeddingFunction";
+import About from "./Pages/About";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/event" element={<Event />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/oneDayPicnic" element={<OneDayPicnic />} />
+        <Route path="/VillOnRent" element={<VillOnRent />} />
+        <Route path="/weddingFunction" element={<WeddingFunction />} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
 
